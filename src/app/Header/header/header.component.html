@@ -1,0 +1,31 @@
+<nav class="navbar bg-slate-200 shadow-md w-full fixed top-0 left-0">
+  <div class="container mx-auto text-white md:flex items-center justify-between py-4 px-7">
+    <div class="flex items-center justify-between">
+      <h1 class="text-5xl text-blue-600 font-bold">SATP</h1>
+      <!-- Bouton burger -->
+      <button (click)="toggleMenu()" class="md:hidden text-3xl focus:outline-none">
+        <span *ngIf="!isMenuOpen">&#9776;</span>
+        <span *ngIf="isMenuOpen">&times;</span>
+      </button>
+    </div>
+
+    <!-- Menu pour les grands écrans -->
+    <div class="hidden md:flex md:items-center space-x-6 text-lg pt-2">
+      <a href="/accueil#accueil" class="hover:text-blue-600">Accueil</a>
+      <a href="/apropos#apropos" class="hover:text-blue-600">À Propos</a>
+      <a href="/service#service" class="hover:text-blue-600">Services</a>
+      <a href="/projet#projet" class="hover:text-blue-600">Projets</a>
+      <a href="/contact#contact" class="hover:text-blue-600">Contact</a>
+    </div>
+    
+    <!-- Menu mobile -->
+    <ul *ngIf="isMenuOpen" class="md:hidden text-lg flex flex-col space-y-4 mt-4">
+      <li><a href="/accueil#accueil" class="hover:text-blue-600">Accueil</a></li>
+      <li><a href="/apropos#apropos" class="hover:text-blue-600">À Propos</a></li>
+      <li><a href="/service#service" class="hover:text-blue-600">Services</a></li>
+      <li><a href="/projet#projet" class="hover:text-blue-600">Projets</a></li>
+      <li><a href="/contact#contact" class="hover:text-blue-600">Contact</a></li>
+    </ul>
+    
+  </div>
+</nav>
